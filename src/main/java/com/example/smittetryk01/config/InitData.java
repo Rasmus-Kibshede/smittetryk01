@@ -19,9 +19,13 @@ public class InitData implements CommandLineRunner {
         County copenhagen = new County();
         copenhagen.setName("Region Hovedstaden");
         copenhagen.setCountyCode("0101");
-        //copenhagen.setHref("https://api.dataforsyningen.dk/kommuner/0101");
         copenhagen.setHref("http://localhost:8080/county/0101");
-
         countyRepository.save(copenhagen);
+
+        County valby = new County();
+        valby.setName("Valby");
+        valby.setCountyCode("1000");
+        valby.setHref("http://localhost:8080/county/1000");
+        countyRepository.save(valby);
     }
 }
