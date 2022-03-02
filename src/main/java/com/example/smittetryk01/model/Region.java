@@ -1,26 +1,27 @@
 package com.example.smittetryk01.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-public class County {
-
+public class Region {
     @Id
-    @Column(name = "countyCode")
-    private String countyCode;
+    @Column(name = "regionCode")
+    private String regionCode;
     private String name;
     private String href;
 
-    @ManyToOne
+    @OneToMany
     @JoinColumn(name = "regionCode")
-    private Region region;
+    private Set<County> counties = new HashSet<>();
 
-    public String getCountyCode() {
-        return countyCode;
+    public String getRegionCode() {
+        return regionCode;
     }
 
-    public void setCountyCode(String countyCode) {
-        this.countyCode = countyCode;
+    public void setRegionCode(String regionCode) {
+        this.regionCode = regionCode;
     }
 
     public String getName() {
@@ -39,21 +40,20 @@ public class County {
         this.href = href;
     }
 
-    public Region getRegion() {
-        return region;
+    public Set<County> getCounties() {
+        return counties;
     }
 
-    public void setRegion(Region region) {
-        this.region = region;
+    public void setCounties(Set<County> counties) {
+        this.counties = counties;
     }
 
     @Override
     public String toString() {
-        return "County{" +
-                "countyCode='" + countyCode + '\'' +
+        return "Region{" +
+                "regionCode='" + regionCode + '\'' +
                 ", name='" + name + '\'' +
                 ", href='" + href + '\'' +
-                ", region=" + region +
                 '}';
     }
 }
