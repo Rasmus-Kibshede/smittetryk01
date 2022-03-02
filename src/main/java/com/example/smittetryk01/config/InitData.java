@@ -26,7 +26,6 @@ public class InitData implements CommandLineRunner {
         region.setHref("https://api.dataforsyningen.dk/regioner/1084");
         regionRepository.save(region);
 
-
         County county = new County();
         county.setName("Region Hovedstaden");
         county.setCountyCode("0101");
