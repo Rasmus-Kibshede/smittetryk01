@@ -1,3 +1,4 @@
+/*
 package com.example.smittetryk01.config;
 
 import com.example.smittetryk01.model.County;
@@ -8,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class InitData implements CommandLineRunner {
 
     @Autowired
@@ -41,3 +42,4 @@ public class InitData implements CommandLineRunner {
         countyRepository.save(valby);
     }
 }
+*/
