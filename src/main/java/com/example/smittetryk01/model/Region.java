@@ -1,12 +1,14 @@
 package com.example.smittetryk01.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Data
 public class Region {
     @Id
     @Column(name = "regionCode")

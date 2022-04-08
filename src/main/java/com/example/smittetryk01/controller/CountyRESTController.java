@@ -1,5 +1,6 @@
 package com.example.smittetryk01.controller;
 
+import com.example.smittetryk01.exception.ResourceNotFoundException;
 import com.example.smittetryk01.model.County;
 import com.example.smittetryk01.repository.CountyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,11 @@ public class CountyRESTController {
         }
 
         return null;
+    }
+
+    @GetMapping("countyByName/{name}")
+    public County findCountyByName(@PathVariable String name) {
+        return countyRepository.findByName(name).orElseThrow(() -> new ResourceNotFoundException("County not found"));
     }
 
     @PostMapping("/county")

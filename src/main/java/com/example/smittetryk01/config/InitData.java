@@ -1,4 +1,4 @@
-/*
+
 package com.example.smittetryk01.config;
 
 import com.example.smittetryk01.model.County;
@@ -21,7 +21,10 @@ public class InitData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Region region = new Region();
+        Region region = regionRepository.findByName("Region Hovedstaden");
+        System.out.println(region.getHref());
+
+        /*Region region = new Region();
         region.setRegionCode("1084");
         region.setName("Region Hovedstaden");
         region.setHref("https://api.dataforsyningen.dk/regioner/1084");
@@ -39,7 +42,6 @@ public class InitData implements CommandLineRunner {
         valby.setCountyCode("1000");
         valby.setHref("http://localhost:8080/county/1000");
         valby.setRegion(region);
-        countyRepository.save(valby);
+        countyRepository.save(valby);*/
     }
 }
-*/
